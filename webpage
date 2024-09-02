@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCMG Web Page Design</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #0073e6;
+            color: white;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            margin-bottom: 10px;
+            color: #0073e6;
+        }
+        .application-form {
+            display: flex;
+            flex-direction: column;
+        }
+        .application-form label {
+            margin-top: 10px;
+        }
+        .application-form input,
+        .application-form select,
+        .application-form textarea {
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .application-form button {
+            margin-top: 20px;
+            padding: 10px;
+            border: none;
+            background-color: #0073e6;
+            color: white;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #0073e6;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>CCMG Gym Website</h1>
+    <img src="logo.png" alt="CCMG Logo" style="width:100px;">
+</header>
+
+<div class="container">
+    <div class="section" id="about">
+        <h2>About CCMG</h2>
+        <p>CCMG offers luxury and training available at our gym. Clients can sign up for various services and enjoy a top-notch experience.</p>
+        <p>For more details about our services, please explore our <a href="#" id="serviceLink">service page</a>.</p>
+    </div>
+
+    <div class="section" id="application">
+        <h2>Application Form</h2>
+        <form class="application-form" id="applicationForm">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="trainer">Select Trainer:</label>
+            <select id="trainer" name="trainer">
+                <option value="trainer1">Trainer 1</option>
+                <option value="trainer2">Trainer 2</option>
+            </select>
+
+            <label for="schedule">Preferred Training Time:</label>
+            <input type="datetime-local" id="schedule" name="schedule">
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div class="section" id="offerings">
+        <h2>Our Offerings</h2>
+        <p>Explore a wide range of offerings at CCMG, including personal training, group classes, and special programs tailored to your needs.</p>
+        <p>View rates and discounts <a href="#rates">here</a>.</p>
+    </div>
+
+    <div class="section" id="location">
+        <h2>Location & Transport</h2>
+        <p>Find us at 123 Fitness Lane. <a href="https://maps.google.com" target="_blank">View on Google Maps</a>.</p>
+        <p>Need a ride? Check out <a href="#" id="transportLink">this reputable transportation company</a> to bring you to our location.</p>
+    </div>
+
+    <div class="section" id="rates">
+        <h2>Rates & Discounts</h2>
+        <table>
+            <tr>
+                <th>Service</th>
+                <th>Rate Before Discount</th>
+                <th>Rate After Discount</th>
+            </tr>
+            <tr>
+                <td>Personal Training</td>
+                <td>$50</td>
+                <td>$40</td>
+            </tr>
+            <tr>
+                <td>Group Class</td>
+                <td>$30</td>
+                <td>$25</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<footer>
+    <p>Contact us: <a href="mailto:info@ccmgym.com">info@ccmgym.com</a></p>
+</footer>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Handle form submission
+        const form = document.getElementById('applicationForm');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Form submitted successfully!');
+
+            // Retrieve form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const trainer = document.getElementById('trainer').value;
+            const schedule = document.getElementById('schedule').value;
+
+            // Simulate form processing (e.g., sending to server)
+            console.log({
+                name,
+                email,
+                trainer,
+                schedule
+            });
+
+            // Clear form after submission
+            form.reset();
+        });
+
+        // Handle links
+        document.getElementById('serviceLink').addEventListener('click', function() {
+            alert('Navigating to the service page...');
+            window.location.href = 'services.html';
+        });
+
+        document.getElementById('transportLink').addEventListener('click', function() {
+            alert('Opening transportation company site...');
+            window.open('https://www.transportcompany.com', '_blank');
+        });
+    });
+</script>
+
+</body>
+</html>
